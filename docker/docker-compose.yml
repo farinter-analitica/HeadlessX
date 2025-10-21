@@ -5,7 +5,7 @@ services:
       dockerfile: docker/Dockerfile
     container_name: headlessx
     ports:
-      - "3002:3002"    # Puerto 3002 para despliegue en IP específica
+      - "${PORT:-3002}:3002"    # Puerto 3002 para despliegue en IP específica
     environment:
       - DOMAIN=${DOMAIN:-172.16.2.231}     # IP del servidor
       - SUBDOMAIN=${SUBDOMAIN:-}           # Sin subdominio para IP
